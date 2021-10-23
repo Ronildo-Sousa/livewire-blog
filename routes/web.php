@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Livewire\App;
+use App\Http\Livewire\Components\LoginForm;
+use App\Http\Livewire\Components\RegisterForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', App::class);
+
+Route::get('/register', RegisterForm::class);
+Route::get('/login', LoginForm::class);

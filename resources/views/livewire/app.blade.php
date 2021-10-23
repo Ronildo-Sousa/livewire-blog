@@ -1,3 +1,3 @@
-<div>
-    component app
-</div>
+<main>
+    <livewire:components.navbar />
+</main>
