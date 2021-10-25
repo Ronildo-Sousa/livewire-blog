@@ -6,16 +6,27 @@ use Livewire\Component;
 
 class Navbar extends Component
 {
+    public $openDropdown;
+
     public function getRegisterForm()
     {
-        return redirect()->to('/register');
+        return redirect()->route('register');
     }
 
     public function getLoginForm()
     {
-        return redirect()->to('/login');
+        return redirect()->route('login');
     }
 
+    public function toggleDropdown()
+    {
+        $this->openDropdown = !$this->openDropdown;
+    }
+
+    public function mount()
+    {
+        $this->openDropdown = false;
+    }
     public function render()
     {
         return view('livewire.components.navbar');
