@@ -14,7 +14,7 @@ class RegisterForm extends Component
 
     protected $rules = [
         'name' => 'required',
-        'email' => 'required|email',
+        'email' => 'required|email|unique:users,email',
         'password' => 'required|min:6',
     ];
 
