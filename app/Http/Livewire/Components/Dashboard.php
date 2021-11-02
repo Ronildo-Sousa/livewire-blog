@@ -22,7 +22,7 @@ class Dashboard extends Component
                                     ->orderBy('created_at', 'desc')
                                     ->get();
 
-        $this->categories = Category::all();
+        $this->categories = Category::orderBy('created_at', 'desc')->get();
     }
 
     public function render()

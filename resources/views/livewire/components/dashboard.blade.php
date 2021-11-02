@@ -1,5 +1,6 @@
 <main>
-    <livewire:components.navbar>
+
+    <livewire:components.navbar />
 
     <div class="mt-5 p-3 mb-5">
         <button wire:click="goToRoute('newArticle')" class="p-2 border border-gray-400">
@@ -10,10 +11,16 @@
         </button>
     </div>
 
-    <div x-data="{ activePage: 'articles'}">
-        <div>
-            <button x-on:click="activePage = 'articles'">Articles</button>
-            <button x-on:click="activePage = 'categories'">Categories</button>
+    <div x-data="{ activePage: 'articles', activeArticle: true, activeCategory: false}" >
+        <div class="text-center mb-8">
+            <button
+                x-on:click="activePage = 'articles', activeArticle = true, activeCategory = false"
+                x-bind:class="activeArticle ? 'border-b-2 border-indigo-500' : ''"
+                class="text-gray-700 font-semibold hover:text-gray-900 mr-5">Articles</button>
+            <button
+            x-on:click="activePage = 'categories', activeArticle = false, activeCategory = true"
+            x-bind:class="activeCategory ? 'border-b-2 border-indigo-500' : ''"
+            class="text-gray-700 font-semibold hover:text-gray-900">Categories</button>
         </div>
 
         <template x-if="activePage == 'articles'">

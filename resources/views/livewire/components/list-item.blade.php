@@ -7,7 +7,7 @@
             @if ($type === 'article')
                 <p class="mr-5 font-semibold">{{ $data->title}}</p>
                 <p class="mr-5">{{ $data->body}}</p>
-                <p class="mr-5">{{ $data->num_likes}}</p>
+                <p class="mr-5">{{ $data->num_likes}} likes</p>
             @endif
 
             <div>
