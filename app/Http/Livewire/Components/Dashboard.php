@@ -3,11 +3,13 @@
 namespace App\Http\Livewire\Components;
 
 use App\Models\Article;
+use App\Models\Category;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
     public $articles;
+    public $categories;
 
     public function goToRoute($route)
     {
@@ -19,6 +21,8 @@ class Dashboard extends Component
         $this->articles = Article::where('user_id', auth()->user()->id)
                                     ->orderBy('created_at', 'desc')
                                     ->get();
+
+        $this->categories = Category::all();
     }
 
     public function render()
