@@ -41,7 +41,10 @@
                     </div>
 
                     <div>
-                        <button wire:click="save" type="submit"
+                        <button
+                            wire:click="save"
+                            wire:loading.class='hidden'
+                            type="submit"
                             class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                 <!-- Heroicon name: solid/lock-closed -->
@@ -54,6 +57,12 @@
                                 </svg>
                             </span>
                             Register
+                        </button>
+                        <button
+                            wire:loading
+                            wire:target='save'
+                            class="cursor-not-allowed group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                            Loading...
                         </button>
                     </div>
                 </form>

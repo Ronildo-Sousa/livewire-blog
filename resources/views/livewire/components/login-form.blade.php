@@ -9,6 +9,12 @@
                     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
                         Sign in to your account
                     </h2>
+                    @if($errors->any())
+                        @foreach ($errors->all() as $error)
+                        <p class="text-center bg-red-500 text-white p-2 rounded mt-3">
+                            {{ $error }}</p>
+                        @endforeach
+                    @endif
                     @if(session('notAccess'))
                         <p class="text-center bg-red-500 text-white p-2 rounded mt-3">{{ session('notAccess') }}</p>
                     @endif
@@ -31,7 +37,10 @@
                     </div>
 
                     <div>
-                        <button wire:click="login" type="submit"
+                        <button
+                            wire:click="login"
+                            wire:loading.class='hidden'
+                            type="submit"
                             class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                 <!-- Heroicon name: solid/lock-closed -->
@@ -44,6 +53,12 @@
                                 </svg>
                             </span>
                             Sign in
+                        </button>
+                        <button
+                            wire:loading
+                            wire:target='login'
+                            class="cursor-not-allowed group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                            Loading...
                         </button>
                     </div>
                 </form>

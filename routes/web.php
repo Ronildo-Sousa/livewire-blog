@@ -3,7 +3,8 @@
 use App\Http\Livewire\App;
 use App\Http\Livewire\Components\LoginForm;
 use App\Http\Livewire\Components\RegisterForm;
-use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\Components\Dashboard;
+use App\Http\Livewire\NewArticle;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,5 @@ Route::get('/login', LoginForm::class)->name('login');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('new-article', NewArticle::class)->name('newArticle');
 });

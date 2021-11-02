@@ -22,7 +22,7 @@ class ArticleFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->title;
+        $title = $this->faker->sentence(5);
         return [
             'title' => $title,
             'title_slug' => Str::slug($title) ."-". rand(0, 999999),
