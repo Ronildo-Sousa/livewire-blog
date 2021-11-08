@@ -11,6 +11,7 @@ class Dashboard extends Component
     public string $type = 'article';
     public $articles;
     public $categories;
+    public $data;
 
     protected $listeners = [
         'deleted' => '$refresh'
@@ -25,8 +26,8 @@ class Dashboard extends Component
     public function mount()
     {
         $this->articles = Article::where('user_id', auth()->user()->id)
-                                    ->orderBy('created_at', 'desc')
-                                    ->get();
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         $this->categories = Category::orderBy('created_at', 'desc')->get();
     }

@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class ListItem extends Component
 {
-    public $type;
+    public string $type;
     public $data;
 
     public function edit()

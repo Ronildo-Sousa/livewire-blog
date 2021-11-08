@@ -19,8 +19,8 @@ class CreateArticlesTable extends Migration
             $table->string('title_slug');
             $table->text('body');
             $table->integer('num_likes')->default(0);
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

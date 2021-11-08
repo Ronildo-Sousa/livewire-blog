@@ -45,15 +45,25 @@
         </label>
     </div>
 
-    <div>
+    <div class="flex justify-center">
         @if ($type === 'article')
             @foreach ($articles as $article)
                 <livewire:components.list-item :type="$type" :data="$article" :key="$article->id">
             @endforeach
-        @else
+
+            @if (sizeof($articles) === 0)
+                <livewire:components.empty-component :message="'We dont have articles to show'">
+            @endif
+        @endif
+
+        @if($type === 'category')
             @foreach ($categories as $category)
-                <livewire:components.list-item :type="$type" :data="$category" :key="$category->id">
+                <livewire:components.list-item :type="$type" :data="$category" :key="$category->id . '/category'">
             @endforeach
+
+            @if (sizeof($categories) === 0)
+                <livewire:components.empty-component :message="'We dont have categories to show'">
+            @endif
         @endif
 
     </div>

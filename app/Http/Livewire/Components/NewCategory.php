@@ -11,6 +11,11 @@ class NewCategory extends Component
 
     public $rules = ['name' => 'required'];
 
+    public function goBack()
+    {
+        return redirect()->route('dashboard');
+    }
+
     public function save()
     {
         $this->validate();
