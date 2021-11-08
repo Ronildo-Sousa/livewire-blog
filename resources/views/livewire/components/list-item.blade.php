@@ -17,7 +17,7 @@
                 >
                     edit
                 </button>
-               <livewire:components.delete-button >
+               <livewire:components.delete-button :type="$type" :data="$data" />
             </div>
         </div>
 

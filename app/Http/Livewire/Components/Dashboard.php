@@ -12,6 +12,9 @@ class Dashboard extends Component
     public $articles;
     public $categories;
 
+    protected $listeners = [
+        'deleted' => '$refresh'
+    ];
 
 
     public function goToRoute($route)

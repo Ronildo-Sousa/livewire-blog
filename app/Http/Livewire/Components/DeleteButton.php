@@ -6,9 +6,13 @@ use Livewire\Component;
 
 class DeleteButton extends Component
 {
+    public string $type = 'article';
+    public $data;
+
+
     public function delete()
     {
-        return redirect()->route('login');
+        $this->data->delete();
         $this->emit('deleted');
     }
 
