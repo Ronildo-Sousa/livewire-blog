@@ -8,8 +8,11 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
+    public string $type = 'article';
     public $articles;
     public $categories;
+
+
 
     public function goToRoute($route)
     {

@@ -10,17 +10,14 @@
                 <p class="mr-5">{{ $data->num_likes}} likes</p>
             @endif
 
-            <div>
+            <div class="flex">
                 <button
+                    wire:click='edit'
                     class="text-white font-semibold px-3 py-1 bg-indigo-500 rounded hover:bg-indigo-600"
                 >
                     edit
                 </button>
-                <button
-                    class="text-white font-semibold px-3 py-1 bg-red-500 rounded hover:bg-red-600"
-                >
-                    delete
-                </button>
+               <livewire:components.delete-button >
             </div>
         </div>
 

@@ -10,6 +10,11 @@ class ListItem extends Component
     public $type;
     public $data;
 
+    public function edit()
+    {
+        return redirect()->route('login');
+    }
+
     public function mount()
     {
         $this->data->body = Str::words($this->data->body, 6, '...');
