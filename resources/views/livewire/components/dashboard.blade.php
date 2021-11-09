@@ -45,7 +45,7 @@
         </label>
     </div>
 
-    <div class="flex justify-center">
+    <div>
         @if ($type === 'article')
             @foreach ($articles as $article)
                 <livewire:components.list-item :type="$type" :data="$article" :key="$article->id">

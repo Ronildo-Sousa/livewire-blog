@@ -9,10 +9,12 @@ class ListItem extends Component
 {
     public string $type;
     public $data;
+    public $editing = false;
+
 
     public function edit()
     {
-        return redirect()->route('login');
+        $this->editing = true;
     }
 
     public function mount()
